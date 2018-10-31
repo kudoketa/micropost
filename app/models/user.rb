@@ -13,7 +13,14 @@ class User < ApplicationRecord
   has_many :followers, through: :reverses_of_relationship, source: :user
   
   has_many :favorites
+  # def favorites
+  #   Favorite.where(user_id: self.id)
+  # end
+
   has_many :favoposts, through: :favorites, source: :micropost
+  # def favoposts
+  #   Micropost.where(id: self.favorites.pluck(:micropost_id))
+  # end
 
   def follow(other_user)
     unless self == other_user
@@ -46,6 +53,10 @@ class User < ApplicationRecord
 
   def favorite?(micropost)
     self.favoposts.include?(micropost)
+  end
+  
+  def feed_favorites
+    Micropost.where(user_id: self.favorite_ids + [self.id])
   end
   
 end
