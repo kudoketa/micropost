@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+.delete {
+      float : left ;
+      }
+.favorite {
+      float : left ;
+      }
+      
+.media {
+border: 5px solid #ccc;
+
+}

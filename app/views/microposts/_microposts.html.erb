@@ -11,13 +11,14 @@
         <div>
           <p><%= micropost.content %></p>
         </div>
-        <div>
-              <%= render 'favorites/favorites_button', micropost: micropost %>
+        <div class="delete">
           <% if current_user == micropost.user %>
               <%= link_to "Delete", micropost, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
           <% end %>
         </div>
-      </div>
+        <div class="favorite">
+          <%= render 'favorites/favorites_button', micropost: micropost %>
+        </div>
     </li>
   <% end %>
   <%= paginate microposts %>
