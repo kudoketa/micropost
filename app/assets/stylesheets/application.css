@@ -16,6 +16,7 @@
 
 .delete {
       float : left ;
+      margin-right: 10px;
       }
 .favorite {
       float : left ;
