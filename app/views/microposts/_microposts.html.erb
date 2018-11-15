@@ -19,6 +19,7 @@
         <div class="favorite">
           <%= render 'favorites/favorites_button', micropost: micropost %>
         </div>
+        <%= link_to "スレッドへ", micropost %>
     </li>
   <% end %>
   <%= paginate microposts %>

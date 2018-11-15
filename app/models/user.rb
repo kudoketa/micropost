@@ -21,6 +21,8 @@ class User < ApplicationRecord
   # def favoposts
   #   Micropost.where(id: self.favorites.pluck(:micropost_id))
   # end
+  
+  has_many :comments
 
   def follow(other_user)
     unless self == other_user

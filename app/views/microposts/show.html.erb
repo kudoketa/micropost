@@ -1,0 +1,9 @@
+<h1><%= @micropost.content %></h1>
+
+<ul><%= render @comments %></ul>
+
+<%= form_for(@comment) do |f| %>
+  <%= f.hidden_field :micropost_id %>
+  <%= f.text_area :content %>
+  <%= f.submit %>
+<% end %>
